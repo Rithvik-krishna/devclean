@@ -34,6 +34,8 @@ Most developers eventually face directories like these:
 
 You *think* they are safe to remove — but you are not 100% sure.
 
+**If devclean made you hesitate more or less, please open an issue.**
+
 Current options are unsatisfying:
 
 * `rm -rf` — fast but dangerous
