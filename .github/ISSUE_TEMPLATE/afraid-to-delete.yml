@@ -1,0 +1,50 @@
+name: "I have a directory I’m afraid to delete"
+description: "You are unsure whether a directory is safe to delete"
+title: "Afraid to delete: <directory name>"
+labels: ["hesitation", "analysis-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe a real directory you hesitate to delete.
+        Partial information is totally fine.
+
+  - type: input
+    id: languages
+    attributes:
+      label: Languages / Frameworks
+      placeholder: "Rust, Node.js, Python, ..."
+
+  - type: input
+    id: build_tools
+    attributes:
+      label: Build tools (if any)
+      placeholder: "cargo, npm, gradle, ..."
+
+  - type: dropdown
+    id: project_type
+    attributes:
+      label: Project type
+      options:
+        - Single-language project
+        - Multi-language project
+        - Monorepo
+
+  - type: input
+    id: directory
+    attributes:
+      label: Directory path
+      placeholder: "./target"
+    validations:
+      required: true
+
+  - type: textarea
+    id: hesitation_reason
+    attributes:
+      label: Why are you hesitant to delete it?
+      description: "What could go wrong if you delete it?"
+
+  - type: textarea
+    id: needed_info
+    attributes:
+      label: What information would help you decide?

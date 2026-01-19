@@ -1,0 +1,33 @@
+name: "devclean’s explanation helped me"
+description: "devclean reduced your hesitation"
+title: "Explanation helped: <directory name>"
+labels: ["positive-feedback", "trust"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This feedback helps us understand what builds trust.
+
+  - type: input
+    id: directory
+    attributes:
+      label: Directory name
+
+  - type: textarea
+    id: helpful_part
+    attributes:
+      label: What part of the explanation helped most?
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: What did you do afterward?
+      options:
+        - Deleted the directory
+        - Deleted part of it
+        - Did not delete it, but felt more confident
+
+  - type: textarea
+    id: did_right
+    attributes:
+      label: What did devclean do right?

@@ -1,0 +1,34 @@
+name: "Would I keep using devclean?"
+description: "General feedback on long-term usefulness"
+title: "Long-term usage feedback"
+labels: ["product-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template helps us evaluate whether devclean solves a real, recurring problem.
+
+  - type: checkboxes
+    id: scenarios
+    attributes:
+      label: When would you use devclean?
+      options:
+        - label: When disk space is low
+        - label: Cleaning old projects
+        - label: Taking over someone else’s codebase
+        - label: CI / build environment maintenance
+        - label: Other
+
+  - type: dropdown
+    id: recommend
+    attributes:
+      label: Would you recommend devclean to a colleague?
+      options:
+        - Yes
+        - Maybe
+        - No
+
+  - type: textarea
+    id: blocker
+    attributes:
+      label: Main reason if you would not recommend it
