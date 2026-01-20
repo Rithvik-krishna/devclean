@@ -1,0 +1,34 @@
+/target
+
+# IDE directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+Cargo.lock
+
+# Test and debug
+*.rs.bk
+test-results/
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
